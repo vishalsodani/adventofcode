@@ -1,5 +1,5 @@
 start_frequency = 0
-track_frequqncy = []
+track_frequqncy = {}
 found_duplicate = False
 inputs = []
 with open('input.txt') as fp:
@@ -14,7 +14,7 @@ while found_duplicate == False:
             print(start_frequency)
             break
         else:
-            track_frequqncy.append(start_frequency)
+            track_frequqncy[start_frequency] = 1
 
 
 		
