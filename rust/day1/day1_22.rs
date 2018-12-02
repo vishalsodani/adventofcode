@@ -3,7 +3,7 @@ use std::io::{BufReader, BufRead};
 use std::collections::HashSet;
 
 fn main() {
-	let f = File::open("input.txt").unwrap();
+	let f = File::open("../../inputs/day1/input.txt").unwrap();
 	let file = BufReader::new(f);
 	let mut inputs = Vec::new();
 	for line in file.lines() {
