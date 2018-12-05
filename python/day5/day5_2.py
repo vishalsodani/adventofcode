@@ -12,7 +12,7 @@ start_at = 'a'
 
 while start_at != 'z':
     no_match_found = False
-    use_polymer = list(polymer.replace(start_at, '').replace(start_at.upper(), ''))
+    use_polymer = [y for y in polymer if y.lower() != start_at]
     while no_match_found == False:
         last_character = ''
         index_found = []
