@@ -1,5 +1,5 @@
 start_frequency = 0
-track_frequqncy = {}
+track_frequency = {}
 found_duplicate = False
 inputs = []
 with open('input.txt') as fp:
@@ -9,12 +9,12 @@ with open('input.txt') as fp:
 while found_duplicate == False:
     for freq in inputs:
         start_frequency += freq
-        if start_frequency in track_frequqncy:
+        if start_frequency in track_frequency:
             found_duplicate = True
             print(start_frequency)
             break
         else:
-            track_frequqncy[start_frequency] = 1
+            track_frequency[start_frequency] = 1
 
 
 		
