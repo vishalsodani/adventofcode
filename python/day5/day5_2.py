@@ -11,7 +11,6 @@ i = 0
 start_at = 'a'
 
 while start_at != 'z':
-    last_character = ''
     no_match_found = False
     use_polymer = list(polymer.replace(start_at, '').replace(start_at.upper(), ''))
     while no_match_found == False:
