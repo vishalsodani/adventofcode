@@ -1,29 +1,32 @@
 polymer = ''
+import time
 with open('input.txt') as fp:
     for input in fp:
         polymer = input
 
 last_character = ''
-found = False
+no_match_found = False
+polymer = list(polymer)
 
 while no_match_found == False:
-    #import pdb;pdb.set_trace()
     found = False
     last_character = ''
+    index_found = []
     for index, character in enumerate(polymer):
-        if found:
-            break
         if character.lower() == last_character.lower():
             if character.isupper() and last_character.islower() or character.islower() and last_character.isupper():
-                new_str = polymer[index+1:]
-                old_str = polymer[0:index-1]
-                polymer = old_str + new_str
+                index_found.append(index)
+                index_found.append(index-1)
                 found = True
-
+                last_character = ''
+                
         else:
             last_character = character
+    for ind in sorted(index_found, reverse=True):
+        del polymer[ind]
     if found == False:
         break
 print(len(polymer))
+
         
      
