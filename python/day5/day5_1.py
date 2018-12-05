@@ -4,11 +4,7 @@ with open('input.txt') as fp:
         polymer = input
 
 last_character = ''
-
 found = False
-no_match_found = False
-match_found = False
-
 
 while no_match_found == False:
     #import pdb;pdb.set_trace()
@@ -26,8 +22,6 @@ while no_match_found == False:
 
         else:
             last_character = character
-    last_character_in = ''
-    match_found = False
     if found == False:
         break
 print(len(polymer))
