@@ -34,8 +34,5 @@ while start_at != 'z':
             break
     i = i + 1
     start_at = az[i]
-    with open('input.txt') as fp:
-        for input in fp:
-            polymer = input
      
 print(shortest_length)
