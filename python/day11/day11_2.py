@@ -34,29 +34,18 @@ while size_of_square < range_x + 1:
 
             
             power_square = 0        
-            #print("----size of square %s" % size_of_square)
             for dx in range(i, i+size_of_square):
                 
                 for ey in range(y, y+size_of_square):
                     if (ey <= range_x - 1) and (dx <= range_y - 1):
-                        #print("%s,%s" % (dx, ey))
-                        #try:
                         power_square += fuel_grid[dx][ey]
-                        # except:
-                        #     power_square += 0
             if power_square > positive_power:
-                # print("----size of square %s" % size_of_square)
-                # print(i)
-                # print(y)
-                # print(power_square)
-                # print("---done----")
                 positive_power = power_square
                 top_left_fuel = []
                 top_left_fuel.append(i)
                 top_left_fuel.append(y)
                 grid_size = size_of_square
     size_of_square = size_of_square + 1
-    #import pdb;pdb.set_trace()
 
 
 print(positive_power)
