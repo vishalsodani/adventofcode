@@ -9,10 +9,7 @@ fn main() {
             let x_index = i + 1;
             let y_index = y + 1;
             let rack_id = x_index + 10;
-            let mut power_level = rack_id * y_index;
-            power_level += grid_serial_number;
-            power_level = power_level * rack_id;
-
+            let mut power_level = ((rack_id * y_index) + grid_serial_number) * rack_id;
             let mut hundreds: i32 = 0;
             let pls = power_level.to_string();
             let mut rp = pls.chars();    
@@ -25,11 +22,7 @@ fn main() {
                     hundreds = rp.next().unwrap().to_string().parse::<i32>().unwrap();
                 }
             }
-            
-            
-
             fuel_grid[i][y] = hundreds - 5;
-            
         }
     }
 
