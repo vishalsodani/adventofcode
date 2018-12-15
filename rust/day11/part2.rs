@@ -27,7 +27,7 @@ fn main() {
         }
     }
 
-    for size_of_square in 2..30{
+    for size_of_square in 2..11{
 
         for i in 0..300 {
             for y in 0..300 {
