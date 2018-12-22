@@ -102,17 +102,18 @@ def check_opcodes(before, opcode, after):
     return got_3_opcode
 
 def clean_input(row):
-    return row.replace('[','').replace(']','').split(':')[1].replace(',','').replace(' ','')
+    row = row.replace('[','').replace(']','').split(':')[1].replace(',','').replace(' ','')
+    state_list = []
+    for num in row:
+        state_list.append(int(num))
+    return state_list
 
 with open('input.txt') as fp:
     sample = []
     for input in fp:
         if 'After' in input:
             processnext_2 = False
-            after = clean_input(input.strip())
-            after_list = []
-            for num in after:
-                after_list.append(int(num))
+            after_list = clean_input(input.strip())
             sample.append(after_list)
             inputs.append(sample)
             sample = []
@@ -124,10 +125,7 @@ with open('input.txt') as fp:
             sample.append(op_list)
         if 'Before' in input:
             processnext_2 = True
-            before = clean_input(input.strip())
-            before_list = []
-            for num in before:
-                before_list.append(int(num))
+            before_list = clean_input(input.strip())
             sample.append(before_list)
 
 
